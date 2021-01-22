@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
+
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: white;
+  font-family: monospace;
+  color: black;
+  overflow: hidden;
+}
+
+.image {
+  width: 80px;
+  height: auto;
+}
+
+.required {
+  color: red;
+}
+
+.quote {
+  color: grey;
+  text-align: center;
+  font-style: italic;
+}
+
+input[type="file"] {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
