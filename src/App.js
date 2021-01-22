@@ -37,7 +37,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <p className="mt-5 text-center text-muted">
+      <p className="py-5 text-center text-muted">
         ©Copyright 2021 - Iovan Alexandra
       </p>
     </div>

@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
 
-body, html {
+body, html, #root {
   height: 100%;
 }
 
@@ -10,7 +10,6 @@ body {
   background-color: white;
   font-family: monospace;
   color: black;
-  overflow: hidden;
 }
 
 .image {
