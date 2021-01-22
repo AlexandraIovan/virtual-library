@@ -8,7 +8,7 @@ export function Books({ token, removeAuthToken }) {
 
   function search() {
     if (searchInput.current) {
-      setSearchValue(searchInput.current.value);
+      setSearchValue(searchInput.current.value.toLowerCase());
     }
   }
 
@@ -27,6 +27,10 @@ export function Books({ token, removeAuthToken }) {
       formData.append(`files.poza`, pozaFile, "poza");
       formData.append(`files.pdf`, pdfFile, "pdf");
       createBook(formData);
+      elements.poza.value = "";
+      elements.pdf.value = "";
+      elements.autori.value = "";
+      elements.carti.value = "";
     } else {
       alert("Informatiile pentru carte nu sunt complete.");
     }
@@ -163,14 +167,8 @@ export function Books({ token, removeAuthToken }) {
               placeholder="Cauta carte..."
               aria-label="Search"
               ref={searchInput}
+              onChange={search}
             />
-            <button
-              className="btn btn-outline-secondary"
-              type="submit"
-              onClick={search}
-            >
-              Cauta
-            </button>
           </div>
           <h4>Lista Carti:</h4>
           <table className="table table-hover">
@@ -186,8 +184,8 @@ export function Books({ token, removeAuthToken }) {
             <tbody>
               {books.map((book) => {
                 const isFiltered =
-                  book.autor.indexOf(searchValue) !== -1 ||
-                  book.titlu.indexOf(searchValue) !== -1;
+                  book.autor.toLowerCase().indexOf(searchValue) !== -1 ||
+                  book.titlu.toLowerCase().indexOf(searchValue) !== -1;
                 return (
                   isFiltered && (
                     <tr key={book._id}>
